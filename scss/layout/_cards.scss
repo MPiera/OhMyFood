@@ -1,0 +1,115 @@
+@import "../base/typography";
+
+.card_main {
+  .contain-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    @media (min-width: 760px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .card {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      background: #ffffff;
+      box-sizing: border-box;
+      object-fit: fill;
+      width: 100%;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      margin-top: 2rem;
+      position: relative;
+      @media (min-width: 760px) {
+        width: 100%;
+        margin: 1rem 1rem 1rem 0;
+      }
+      @media (min-width: 1024px) {
+        width: 48%;
+        margin: 1rem 1rem 1rem 0;
+      }
+      .para {
+        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+        top: 1rem;
+        right: 1rem;
+        background: #99e2d0;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+        position: absolute;
+        @extend .para_box;
+      }
+      a {
+        width: 100%;
+        list-style-type: none;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+
+        img {
+          width: 100%;
+          height: 220px;
+          border-top-right-radius: 15px;
+          border-top-left-radius: 15px;
+          object-fit: cover;
+        }
+
+        .card-bottom {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0.5rem;
+
+            .card-title {
+              margin-bottom: 5px;
+              @extend .txt-card-title;
+              border-bottom: none;
+              color: #000000;
+            }
+
+            .card-subtitle {
+              @extend .p-reservation;
+              color: #000000;
+            }
+          }
+          .heart-card {
+            position: relative;
+            .fa-regular {
+              font-size: 110%;
+              position: absolute;
+              top: 1.5rem;
+              right: 1.5rem;
+              &:hover {
+                opacity: 0;
+              }
+            }
+
+            .fa-solid {
+              opacity: 0;
+              font-size: 110%;
+              background: linear-gradient(#ff79da, #9356dc);
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+              position: absolute;
+              top: 1.5rem;
+              right: 1.5rem;
+              transition: opacity 400ms;
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

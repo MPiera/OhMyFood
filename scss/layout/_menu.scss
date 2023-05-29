@@ -1,0 +1,101 @@
+@import "../base/typography";
+
+.menu_box {
+  width: 100%;
+  animation: menu 3000ms;
+  @media (min-width: 760px) {
+    width: 70%;
+  }
+  h3 {
+    @extend .h3_menu;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contain-card {
+      width: 95%;
+      height: 69px;
+      border-radius: 15px;
+      background-color: #ffffff;
+      cursor: pointer;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0 1rem 0;
+      &:hover {
+        & > .card {
+          & > .prix {
+            transform: translateX(-49px);
+          }
+        }
+        & > .cont {
+          & > .sidebox {
+            transform: scaleX(1);
+          }
+          & > .fa-circle-check {
+            transform: translateX(-36px);
+          }
+        }
+      }
+      .cont {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        position: relative;
+        left: 20px;
+        .fa-circle-check {
+          transition: transform 1000ms;
+          color: #ffffff;
+          z-index: 3;
+          position: relative;
+          top: 26px;
+        }
+      }
+      .sidebox {
+        width: 59px;
+        height: 75px;
+        background: aquamarine;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 1000ms;
+        z-index: 2;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .plats {
+          padding: 1rem;
+          h4 {
+            @extend .h4_menu;
+          }
+          p {
+            @extend .p_menu;
+          }
+        }
+        .prix {
+          transform: translateX(0);
+          transition: transform 1000ms;
+          position: relative;
+          top: 0.75rem;
+          left: 4.5rem;
+          z-index: 1;
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15.0431px;
+          line-height: 18px;
+          text-align: center;
+          color: #353535;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}
